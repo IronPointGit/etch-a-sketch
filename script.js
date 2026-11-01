@@ -25,11 +25,18 @@ let createGrid = (size) => {
 
 createGrid(16);
 
+let removeGrid = () => {
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
 let btn = document.querySelector("button");
 
 btn.addEventListener('click', () => {
    let input = prompt("Choose size of Grid X by X with a number from 2 - 100");
    let size = parseInt(input);
+   removeGrid();
    createGrid(parseInt(size));
 })
 
