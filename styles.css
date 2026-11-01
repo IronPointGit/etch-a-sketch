@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.div:hover {
+    background-color: black;
+}
+
