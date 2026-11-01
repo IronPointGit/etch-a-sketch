@@ -1,6 +1,5 @@
 let container = document.querySelector(".container");
-
-let size = 20;
+let defaultSize = 16;
 
 let createGrid = (size) => {
     for (let i = 0; i < (size * size); i++) {
@@ -23,7 +22,7 @@ let createGrid = (size) => {
     
 }
 
-createGrid(16);
+createGrid(defaultSize);
 
 let removeGrid = () => {
     while(container.firstChild) {
@@ -35,6 +34,9 @@ let btn = document.querySelector("button");
 
 btn.addEventListener('click', () => {
    let input = prompt("Choose size of Grid X by X with a number from 2 - 100");
+   if (input < 2 || input > 100) {
+    input = prompt("Size was not between 2 and 100 input a correct size");
+   }
    let size = parseInt(input);
    removeGrid();
    createGrid(parseInt(size));
